@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.lznssb.mapper.UserMapper">
+
+    <update id="updateTest">
+        update user
+        set JOB_NUMBER = '100220',
+            DISPLAY_NAME = '喜羊羊'
+        where ID = 1
+    </update>
+</mapper>

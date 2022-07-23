@@ -1,0 +1,33 @@
+#应用名字
+spring:
+  application:
+    name: lznssb
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/login?serverTimezone=GMT%2B8&useSSL=FALSE
+    username: root
+    password: 200866
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+#服务端口号
+server:
+  port: 8000
+
+#mybatis-plus相关配置
+mybatis-plus:
+  #xml扫描,多个目录用逗号或者分号分隔（告诉Mapper所对应的XML文件位置）
+  mapper-locations: classpath:mapper/*.xml
+  #一下配置均有默认值，可以不设置
+  global-config:
+    db-config:
+      #主键类型 AUTO：“数据库ID自增” INPUT:"用户输入ID"，ID_WORKER:"全局唯一ID（数字类型唯一ID）"，UUID：“群居唯一ID UUID”；
+      id-type: auto
+      field-strategy: not_null
+      #数据库类型
+      db-type: mysql
+  configuration:
+    call-setters-on-nulls: true
+    #是否开启自动驼峰命名规则影射
+    map-underscore-to-camel-case: true
+    #sql打印出来
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
